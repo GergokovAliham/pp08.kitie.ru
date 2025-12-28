@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог ПО - SoftBuy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://avatars.mds.yandex.net/i?id=c223bebca5804e63eb3759d904030fabffbbfa88-10702829-images-thumbs&n=13" type="image/png">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="https://avatars.mds.yandex.net/i?id=c223bebca5804e63eb3759d904030fabffbbfa88-10702829-images-thumbs&n=13" alt="SoftBuy Logo" class="logo-img">
+                    <span class="logo-text">SoftBuy</span>
+                </a>
+                
+                <!-- Горизонтальное меню -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="catalog.html" class="active"><i class="fas fa-shopping-cart"></i> Каталог ПО</a></li>
+                        <li class="auth-links">
+                            <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Вход</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Регистрация</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Кнопка меню для мобильных -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Вертикальное меню для мобильных -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="vertical-nav">
+            <div class="user-info" id="mobileUserInfo" style="display: none;">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <span class="user-name" id="mobileUserName"></span>
+                    <span class="user-role" id="mobileUserRole"></span>
+                </div>
+            </div>
+            <ul id="mobileMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="catalog.html" class="active"><i class="fas fa-shopping-cart"></i> Каталог ПО</a></li>
+                <li><a href="#categories"><i class="fas fa-th-large"></i> Категории</a></li>
+                <li><a href="#news"><i class="far fa-newspaper"></i> Новости</a></li>
+                <li><a href="#support"><i class="fas fa-headset"></i> Поддержка</a></li>
+                <li class="auth-section">
+                    <a href="login.html" class="login-link"><i class="fas fa-sign-in-alt"></i> Вход</a>
+                    <a href="register.html" class="register-link"><i class="fas fa-user-plus"></i> Регистрация</a>
+                </li>
+                <li class="user-section" style="display: none;">
+                    <a href="dashboard.html"><i class="fas fa-user-circle"></i> Личный кабинет</a>
+                    <a href="#" id="logoutMobile"><i class="fas fa-sign-out-alt"></i> Выход</a>
+                </li>
+                <li class="admin-section" style="display: none;">
+                    <a href="admin.html"><i class="fas fa-cogs"></i> Админ-панель</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Основное содержимое -->
+    <main class="main">
+        <!-- Хлебные крошки -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Главная</a> <span>/</span>
+                <span>Каталог программного обеспечения</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="catalog-header">
+                <h1 class="page-title">Каталог программного обеспечения</h1>
+                <div class="catalog-controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Поиск по каталогу...">
+                        <button id="searchButton"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-controls">
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">Все категории</option>
+                            <option value="os">Операционные системы</option>
+                            <option value="office">Офисные программы</option>
+                            <option value="graphics">Графика и дизайн</option>
+                            <option value="security">Безопасность</option>
+                            <option value="development">Разработка</option>
+                            <option value="multimedia">Мультимедиа</option>
+                        </select>
+                        <select id="sortFilter" class="filter-select">
+                            <option value="popular">По популярности</option>
+                            <option value="price_asc">По цене (дешевые)</option>
+                            <option value="price_desc">По цене (дорогие)</option>
+                            <option value="name">По названию</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Каталог товаров -->
+            <div class="catalog-grid">
+                <!-- Товар 1 -->
+                <div class="software-card" data-category="os" data-price="14999">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=7dc681287725d1439c8566d9f93d1f7d8db7ee04-9040073-images-thumbs&n=13" alt="Windows 11 Pro">
+                        <span class="software-badge">Хит продаж</span>
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Операционные системы</span>
+                        <h3><a href="software.html?id=1">Windows 11 Pro</a></h3>
+                        <p class="software-description">Профессиональная ОС для бизнеса с расширенными функциями безопасности</p>
+                        <div class="software-meta">
+                            <span class="software-version">Версия 23H2</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Windows</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">₽14 999</span>
+                            <div class="software-actions">
+                                <a href="software.html?id=1" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="1"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 2 -->
+                <div class="software-card" data-category="office" data-price="5999">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=65bab17adfdc492cd28856ecedb6262d2cb98462-10246062-images-thumbs&n=13" alt="Microsoft Office">
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Офисные программы</span>
+                        <h3><a href="software.html?id=2">Microsoft Office 365</a></h3>
+                        <p class="software-description">Полный пакет офисных приложений с подпиской на 1 год</p>
+                        <div class="software-meta">
+                            <span class="software-version">Для дома и бизнеса</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Multi-platform</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">₽5 999 <small>/год</small></span>
+                            <div class="software-actions">
+                                <a href="software.html?id=2" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="2"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 3 -->
+                <div class="software-card" data-category="graphics" data-price="2499">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=3e474965aa36f684d81a6d3eb53e467b50ee7878-11918841-images-thumbs&n=13" alt="Adobe Photoshop">
+                        <span class="software-badge new">Новинка</span>
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Графика и дизайн</span>
+                        <h3><a href="software.html?id=3">Adobe Photoshop 2024</a></h3>
+                        <p class="software-description">Профессиональный редактор для работы с растровой графикой</p>
+                        <div class="software-meta">
+                            <span class="software-version">2024 версия</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Windows/Mac</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">₽2 499 <small>/мес</small></span>
+                            <div class="software-actions">
+                                <a href="software.html?id=3" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="3"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 4 -->
+                <div class="software-card" data-category="security" data-price="3499">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=64e968aa5a3e9c947d0835e7f7d84a06fbf9241f-12856979-images-thumbs&n=13" alt="Kaspersky">
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Безопасность</span>
+                        <h3><a href="software.html?id=4">Kaspersky Total Security</a></h3>
+                        <p class="software-description">Полная защита для всех устройств на 1 год</p>
+                        <div class="software-meta">
+                            <span class="software-version">2024 версия</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Multi-platform</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">₽3 499 <small>/год</small></span>
+                            <div class="software-actions">
+                                <a href="software.html?id=4" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="4"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 5 -->
+                <div class="software-card" data-category="os" data-price="7999">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=905fdaa07a8bc9cfc0f7823b9c7d056d5bb17a08-3584061-images-thumbs&n=13" alt="Windows 10 Pro">
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Операционные системы</span>
+                        <h3><a href="software.html?id=5">Windows 10 Pro</a></h3>
+                        <p class="software-description">Проверенная ОС для бизнеса с длительной поддержкой</p>
+                        <div class="software-meta">
+                            <span class="software-version">22H2 версия</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Windows</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">₽7 999</span>
+                            <div class="software-actions">
+                                <a href="software.html?id=5" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="5"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 6 -->
+                <div class="software-card" data-category="development" data-price="0">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=3c792a357319c2b16db958b82e0d1618c7467b9f-17395741-images-thumbs&n=13" alt="Visual Studio">
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Разработка</span>
+                        <h3><a href="software.html?id=6">Visual Studio 2022</a></h3>
+                        <p class="software-description">Интегрированная среда разработки от Microsoft</p>
+                        <div class="software-meta">
+                            <span class="software-version">Community Edition</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Windows</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">Бесплатно</span>
+                            <div class="software-actions">
+                                <a href="software.html?id=6" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="6"><i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 7 -->
+                <div class="software-card" data-category="multimedia" data-price="1299">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=e6a0007f6ea38a0288728f35c7a9f2080eae5ef0-5477180-images-thumbs&n=13" alt="Adobe Premiere">
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Мультимедиа</span>
+                        <h3><a href="software.html?id=7">Adobe Premiere Pro</a></h3>
+                        <p class="software-description">Профессиональный видеоредактор для создания фильмов</p>
+                        <div class="software-meta">
+                            <span class="software-version">2024 версия</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Windows/Mac</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">₽1 299 <small>/мес</small></span>
+                            <div class="software-actions">
+                                <a href="software.html?id=7" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="7"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 8 -->
+                <div class="software-card" data-category="security" data-price="1999">
+                    <div class="software-image">
+                        <img src="https://avatars.mds.yandex.net/i?id=96873efab64187cece7d22eda7df0fb76107d41d-8159483-images-thumbs&n=13" alt="Norton">
+                    </div>
+                    <div class="software-content">
+                        <span class="software-category">Безопасность</span>
+                        <h3><a href="software.html?id=8">Norton 360 Deluxe</a></h3>
+                        <p class="software-description">Комплексная защита с VPN и менеджером паролей</p>
+                        <div class="software-meta">
+                            <span class="software-version">Для 5 устройств</span>
+                            <span class="software-platform"><i class="fas fa-desktop"></i> Multi-platform</span>
+                        </div>
+                        <div class="software-price">
+                            <span class="price">₽1 999 <small>/год</small></span>
+                            <div class="software-actions">
+                                <a href="software.html?id=8" class="btn-details">Подробнее</a>
+                                <button class="btn-cart" data-id="8"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="SoftBuy Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">SoftBuy</span>
+                    <p class="footer-tagline">Лицензионное ПО для каждого</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Магазин</h4>
+                        <ul>
+                            <li><a href="catalog.html">Каталог ПО</a></li>
+                            <li><a href="catalog.html?category=os">Операционные системы</a></li>
+                            <li><a href="catalog.html?category=office">Офисные программы</a></li>
+                            <li><a href="catalog.html?category=security">Антивирусы</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Помощь</h4>
+                        <ul>
+                            <li><a href="#support">Техподдержка</a></li>
+                            <li><a href="#faq">Частые вопросы</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                            <li><a href="#policy">Конфиденциальность</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Аккаунт</h4>
+                        <ul>
+                            <li><a href="login.html">Вход в систему</a></li>
+                            <li><a href="register.html">Регистрация</a></li>
+                            <li><a href="dashboard.html">Личный кабинет</a></li>
+                            <li><a href="admin.html">Админ-панель</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>SoftBuy</p>
+                <p>Контактный email: <a href="mailto:support@softbuy.ru">support@softbuy.ru</a></p>
+                <p>Телефон: <a href="tel:+78001234567">8-800-123-45-67</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

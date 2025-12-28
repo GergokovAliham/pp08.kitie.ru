@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - SoftBuy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://avatars.mds.yandex.net/i?id=c223bebca5804e63eb3759d904030fabffbbfa88-10702829-images-thumbs&n=13" type="image/png">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="https://avatars.mds.yandex.net/i?id=c223bebca5804e63eb3759d904030fabffbbfa88-10702829-images-thumbs&n=13" alt="SoftBuy Logo" class="logo-img">
+                    <span class="logo-text">SoftBuy</span>
+                </a>
+                
+                <!-- Горизонтальное меню -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="catalog.html"><i class="fas fa-shopping-cart"></i> Каталог ПО</a></li>
+                        <li class="auth-links">
+                            <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Вход</a>
+                            <a href="register.html" class="btn-register active"><i class="fas fa-user-plus"></i> Регистрация</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- Кнопка меню для мобильных -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Вертикальное меню для мобильных -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="vertical-nav">
+            <ul id="mobileMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="catalog.html"><i class="fas fa-shopping-cart"></i> Каталог ПО</a></li>
+                <li><a href="#categories"><i class="fas fa-th-large"></i> Категории</a></li>
+                <li><a href="#news"><i class="far fa-newspaper"></i> Новости</a></li>
+                <li><a href="#support"><i class="fas fa-headset"></i> Поддержка</a></li>
+                <li class="auth-section">
+                    <a href="login.html" class="login-link"><i class="fas fa-sign-in-alt"></i> Вход</a>
+                    <a href="register.html" class="register-link active"><i class="fas fa-user-plus"></i> Регистрация</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Основное содержимое -->
+    <main class="main">
+        <!-- Хлебные крошки -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Главная</a> <span>/</span>
+                <span>Регистрация</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1 class="auth-title">Создание аккаунта</h1>
+                    <p class="auth-subtitle">Зарегистрируйтесь для доступа к личному кабинету и покупкам</p>
+                </div>
+
+                <form id="registerForm" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lastName">Фамилия *</label>
+                            <input type="text" id="lastName" class="form-control" placeholder="Иванов" required>
+                            <div class="error-message" id="lastNameError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="firstName">Имя *</label>
+                            <input type="text" id="firstName" class="form-control" placeholder="Иван" required>
+                            <div class="error-message" id="firstNameError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="middleName">Отчество</label>
+                            <input type="text" id="middleName" class="form-control" placeholder="Иванович">
+                            <div class="error-message" id="middleNameError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" class="form-control" placeholder="ivanov@example.com" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login">Логин *</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="login" class="form-control" placeholder="ivanov" required>
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                        </div>
+                        <div class="error-message" id="loginError"></div>
+                        <small class="form-hint">Только латинские буквы и цифры</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Пароль *</label>
+                            <div class="input-with-icon">
+                                <input type="password" id="password" class="form-control" placeholder="Введите пароль" required>
+                                <span class="input-icon"><i class="fas fa-lock"></i></span>
+                                <button type="button" class="toggle-password" data-target="password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="passwordError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Подтверждение пароля *</label>
+                            <div class="input-with-icon">
+                                <input type="password" id="confirmPassword" class="form-control" placeholder="Повторите пароль" required>
+                                <span class="input-icon"><i class="fas fa-lock"></i></span>
+                                <button type="button" class="toggle-password" data-target="confirmPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="confirmPasswordError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="+7 (999) 123-45-67">
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">
+                            Я соглашаюсь с <a href="#terms">условиями использования</a> и 
+                            <a href="#privacy">политикой конфиденциальности</a> *
+                        </label>
+                        <div class="error-message" id="agreeTermsError"></div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="subscribeNews">
+                        <label for="subscribeNews">
+                            Подписаться на новости и специальные предложения
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit" id="registerButton">
+                            <span>Зарегистрироваться</span>
+                            <i class="fas fa-user-plus"></i>
+                        </button>
+                    </div>
+
+                    <div class="auth-footer">
+                        <p>Уже есть аккаунт? <a href="login.html">Войдите в систему</a></p>
+                        <p class="demo-credentials">
+                            <strong>Демо доступ:</strong><br>
+                            Администратор: admin / admin<br>
+                            Пользователь: user / user123
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="SoftBuy Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">SoftBuy</span>
+                    <p class="footer-tagline">Лицензионное ПО для каждого</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Магазин</h4>
+                        <ul>
+                            <li><a href="catalog.html">Каталог ПО</a></li>
+                            <li><a href="catalog.html?category=os">Операционные системы</a></li>
+                            <li><a href="catalog.html?category=office">Офисные программы</a></li>
+                            <li><a href="catalog.html?category=security">Антивирусы</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Помощь</h4>
+                        <ul>
+                            <li><a href="#support">Техподдержка</a></li>
+                            <li><a href="#faq">Частые вопросы</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                            <li><a href="#policy">Конфиденциальность</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Аккаунт</h4>
+                        <ul>
+                            <li><a href="login.html">Вход в систему</a></li>
+                            <li><a href="register.html" class="active">Регистрация</a></li>
+                            <li><a href="dashboard.html">Личный кабинет</a></li>
+                            <li><a href="admin.html">Админ-панель</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>SoftBuy</p>
+                <p>Контактный email: <a href="mailto:support@softbuy.ru">support@softbuy.ru</a></p>
+                <p>Телефон: <a href="tel:+78001234567">8-800-123-45-67</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

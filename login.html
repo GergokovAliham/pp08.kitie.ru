@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в систему - SoftBuy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    
+                    <span>SoftBuy</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <nav class="vertical-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="login.html" class="active"><i class="fas fa-sign-in-alt"></i> Вход</a></li>
+                <li><a href="register.html"><i class="fas fa-user-plus"></i> Регистрация</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Вход в систему</h2>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login">Логин</label>
+                        <input type="text" id="login" class="form-control" placeholder="Введите ваш логин">
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" class="form-control" placeholder="Введите ваш пароль">
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Войти</button>
+                    
+                    <div class="form-footer">
+                        <p>Нет аккаунта? <a href="register.html">Зарегистрируйтесь</a></p>
+                        <p>Демо доступ: логин <strong>admin</strong> / пароль <strong>admin</strong></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>SoftBuy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

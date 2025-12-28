@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="logo">
+                <a href="index.html"></a>
+            </div>
+            <div style="font-size: 0.9rem;">
+                Привет, <a href="index.html" style="color: #e74c3c;">Выход</a>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="profile.html">Мои заявки</a></li>
+                <li><a href="#">Создать заявку</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Мои заявки</h1>
+
+            <div style="margin-bottom: 20px;">
+                <strong>Фильтр: </strong>
+                <a href="#" class="btn" style="width: auto; padding: 5px 15px; height: 35px; line-height: 25px;">Все</a>
+                <a href="#" class="btn" style="background: #95a5a6; width: auto; padding: 5px 15px; height: 35px; line-height: 25px;">Новые</a>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Название</th>
+                            <th>Категория</th>
+                            <th>Статус</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>25.10.2023 10:00</td>
+                            <td>Ошибка при оплате</td>
+                            <td>Финансы</td>
+                            <td><span style="color: green;">Новая</span></td>
+                            <td><button class="btn btn-danger" style="height: 35px; line-height: 35px; font-size: 14px;">Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>20.10.2023 15:30</td>
+                            <td>Не скачивается файл</td>
+                            <td>Техподдержка</td>
+                            <td><span style="color: blue;">Решена</span></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>15.10.2023 09:00</td>
+                            <td>Вернуть деньги</td>
+                            <td>Возврат</td>
+                            <td><span style="color: red;">Отклонена</span></td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+            <h2>Создать новую заявку</h2>
+            <div class="form-container" style="margin: 0;">
+                <form>
+                    <div class="form-group">
+                        <label>Название</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Категория</label>
+                        <select>
+                            <option>Техническая проблема</option>
+                            <option>Оплата</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Описание</label>
+                        <textarea></textarea>
+                    </div>
+                    <button class="btn">Отправить заявку</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p>Покупка программного обеспечения.</p>
+        </footer>
+    </div>
+</body>
+</html>
